@@ -1,9 +1,23 @@
 <h2>Products</h2>
 
+<!-- *ngFor permette di ciclare su una variabile.
+NB: deve essere dichiarata la nuova variabile per quello c'è il "let" -->
 <div *ngFor="let product of products">
-  {{product.name}}
-</div>
+  <h3>
+    <a [title]="product.name + ' details'">{{ product.name }}</a>
+    <!-- se voglio mostrare dinamicamente una    variabile in un campo html devo usare le [] -->
+  </h3>
+  <p *ngIf="product.description">
+    {{ product.description }}
+  </p>
+  <p *ngIf="!product.description">No description for this product</p>
 
+  <!-- A differenza di React Angular vuole il metodo tra le parentesi () in modo da capire
+  che quello che gli stai passando è una funzione custom e in più la funzione la vuole anch'essa con le parentesi! In React sarebbe un errore perchè la funzione verrebbe eseguita subito al render e non solo al click !! -->
+  <button (click)="share()">Share</button>
+
+  <app-product-alarts [product]="product" (notify)="onNotify()"></app-product-alarts>
+</div>
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.
