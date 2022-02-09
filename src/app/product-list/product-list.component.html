@@ -10,6 +10,7 @@ NB: deve essere dichiarata la nuova variabile per quello c'è il "let" -->
       [routerLink]="['/products', product.id]" 
       >{{ product.name }}</a
     >
+
     <!-- se voglio mostrare dinamicamente una variabile in un campo html devo usare le [] -->
   </h3>
   <p *ngIf="product.description">

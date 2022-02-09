@@ -1,0 +1,7 @@
+<h3>Shipping Costs</h3>
+
+<!-- async è una pipe che permette di leggere il contenuto di una richiesta http senza errori -->
+<div class="shipping-item" *ngFor="let ship of shippingCost | async">
+  <span>{{ship.type}}</span> 
+  <span>{{ship.price | currency}}</span>
+</div>

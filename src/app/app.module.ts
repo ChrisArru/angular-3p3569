@@ -9,16 +9,20 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductAlartsComponent } from './product-alarts/product-alarts.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { CartComponent } from './cart/cart.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ShippingComponent } from './shipping/shipping.component';
 
 @NgModule({
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       { path: '', component: ProductListComponent }, /* Non avendo un path viene mostrato subito senza un router link */
       { path: 'products/:productId', component: ProductDetailsComponent }, /* avendo un path bisogna passare un router link per vedere questo componente. 
                                                                           NB quando ci sono i : vuol dire che si aspetta una variabile e non è una stringa fissa*/
       { path: 'cart', component: CartComponent },
+      { path: 'shipping', component: ShippingComponent }
     ])
   ],
   declarations: [
@@ -27,7 +31,8 @@ import { CartComponent } from './cart/cart.component';
     ProductListComponent,
     ProductAlartsComponent,
     ProductDetailsComponent,
-    CartComponent
+    CartComponent,
+    ShippingComponent
   ],
   bootstrap: [
     AppComponent
