@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+/* @Component indentifica che è un componente */
 @Component({
   selector: 'app-top-bar',
   templateUrl: './top-bar.component.html',

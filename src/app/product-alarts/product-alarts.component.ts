@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from '../products';
 
+/* @Component indentifica che è un componente */
 @Component({
   selector: 'app-product-alarts',
   templateUrl: './product-alarts.component.html',
